@@ -1,4 +1,5 @@
-# SET notebook context
+# utils to set notebook context
+# update_version: https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_utils.py
 def get_notebook_dir(v=False):
     import os
     dirname = os.path.abspath('')  # current notebook folder
@@ -38,7 +39,10 @@ def get_notebook_rel_base_path(target_base='notebooks',
     while folder != target_base:
         rel_path += '../'
         i -= 1
-        folder = folders[i]
+        if folders[i]:
+            folder = folders[i]
+        else:
+            return None
         cc += 1
         if cc > 50:
             print('!could not buid relative path')
@@ -63,7 +67,7 @@ print('\nNotebooks_rel_relative_path:\n\t', NOTEBOOKS_REL_DIR)
 PROJECT_ABS_DIR = get_notebook_abs_base_path(target_base="gitlog_builder",resource_dir='')
 print('\nProject_abs_path:\n\t', PROJECT_ABS_DIR)
 
-PROJECT_REL_DIR =  get_notebook_rel_base_path(target_base="gitlog_builder", resource_dir='')
+PROJECT_REL_DIR = get_notebook_rel_base_path(target_base="gitlog_builder", resource_dir='')
 print('\nProject_rel_path:\n\t', PROJECT_REL_DIR)
 
 STATIC_DIR_REL_PATH = get_notebook_rel_base_path(resource_dir="static")
