@@ -1,6 +1,6 @@
 # utils to set notebook context
 # update_version: https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_utils.py
-def get_notebook_dir(v=False):
+def get_notebook_dir(v=False) -> str:
     import os
     dirname = os.path.abspath('')  # current notebook folder
     if v: print('Notebook location:', dirname)
@@ -9,7 +9,7 @@ def get_notebook_dir(v=False):
 def get_notebook_abs_base_path(target_base='notebooks',
                                resource_dir="static",
                                file_name=None,
-                               v=False):
+                               v=False) -> str:
     import os
     dirname = os.path.abspath('')  # current notebook folder
     folders = dirname.split('/')
@@ -28,7 +28,7 @@ def get_notebook_abs_base_path(target_base='notebooks',
 def get_notebook_rel_base_path(target_base='notebooks',
                                resource_dir="static",
                                file_name=None,
-                               v=False):
+                               v=False) -> str:
     import os
     dirname = os.path.abspath('')  # current notebook folder
     folders = dirname.split('/')
@@ -45,7 +45,7 @@ def get_notebook_rel_base_path(target_base='notebooks',
             return None
         cc += 1
         if cc > 50:
-            print('!could not buid relative path')
+            print('!could not build relative path')
             break
     if file_name:
         rel_path = os.path.join(rel_path, resource_dir, file_name)
@@ -55,6 +55,7 @@ def get_notebook_rel_base_path(target_base='notebooks',
     return rel_path
 
 
+# tests
 NOTE_DIR = get_notebook_dir()
 print('\nThis_notebook_path:\n\t', NOTE_DIR)
 
