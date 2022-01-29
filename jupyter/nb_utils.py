@@ -79,7 +79,7 @@ def _print_paths():
     print('\nStatic_dir_absolute_path:\n\t', STATIC_DIR_ABS_PATH)
     print('\n[renderjson.js] abs_path:\n\t', RENDER_JS_ABS_PATH)  
     print('\n[renderjson.js] rel_path:\n\t', RENDER_JS_REL_PATH)
-  
+
 PROJECT='gitlog_builder'
 NOTE_DIR = get_notebook_dir()
 NOTEBOOKS_ABS_DIR = get_notebook_abs_base_path(resource_dir='')
@@ -94,3 +94,5 @@ RENDER_JS_REL_PATH = get_notebook_rel_base_path(resource_dir="static", file_name
 # _print_paths()
     
 %cd $PROJECT_ABS_DIR
+
+print(NOTE_DIR)
