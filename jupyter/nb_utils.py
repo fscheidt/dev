@@ -82,3 +82,5 @@ print('\n[renderjson.js] abs_path:\n\t', RENDER_JS_ABS_PATH)
 
 RENDER_JS_REL_PATH = get_notebook_rel_base_path(resource_dir="static", file_name="renderjson.js")
 print('\n[renderjson.js] rel_path:\n\t', RENDER_JS_REL_PATH)
+
+%cd $PROJECT_ABS_DIR
