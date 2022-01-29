@@ -1,4 +1,3 @@
-# %load https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_utils.py
 # utils to set notebook context
 # update_version: https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_utils.py
 import os
@@ -80,12 +79,13 @@ def _print_paths():
     print('\nStatic_dir_absolute_path:\n\t', STATIC_DIR_ABS_PATH)
     print('\n[renderjson.js] abs_path:\n\t', RENDER_JS_ABS_PATH)  
     print('\n[renderjson.js] rel_path:\n\t', RENDER_JS_REL_PATH)
-    
+  
+PROJECT='gitlog_builder'
 NOTE_DIR = get_notebook_dir()
 NOTEBOOKS_ABS_DIR = get_notebook_abs_base_path(resource_dir='')
 NOTEBOOKS_REL_DIR = get_notebook_rel_base_path(resource_dir='')
-PROJECT_ABS_DIR = get_notebook_abs_base_path(target_base="gitlog_builder",resource_dir='')    
-PROJECT_REL_DIR = get_notebook_rel_base_path(target_base="gitlog_builder", resource_dir='')
+PROJECT_ABS_DIR = get_notebook_abs_base_path(target_base=PROJECT,resource_dir='')    
+PROJECT_REL_DIR = get_notebook_rel_base_path(target_base=PROJECT, resource_dir='')
 STATIC_DIR_REL_PATH = get_notebook_rel_base_path(resource_dir="static")
 STATIC_DIR_ABS_PATH = get_notebook_abs_base_path(resource_dir="static")
 RENDER_JS_ABS_PATH = get_notebook_abs_base_path(file_name="renderjson.js")
