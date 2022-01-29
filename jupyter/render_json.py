@@ -3,6 +3,7 @@ from IPython.display import display_javascript, display_html, display
 import json
 
 JS_FILE = "https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/renderjson.js"
+# JS_FILE = RENDER_JS_REL_PATH
 
 class RenderJSON(object):
     def __init__(self, json_data):
@@ -22,3 +23,4 @@ class RenderJSON(object):
 
 # test:
 # RenderJSON(json_doc)
+# RenderJSON(fmt.doc_to_json(mongo_doc))
