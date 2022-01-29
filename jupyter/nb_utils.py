@@ -4,12 +4,14 @@ import os
 
 def get_notebook_dir(v=False) -> str:
     global BASE
+    global FOLDER
     base_path = ''
     try:
         if BASE:
             base_path = BASE
     except:
         BASE = os.path.abspath('')
+        FOLDER = BASE.split('/')[-1]
         base_path = os.path.abspath('')  # current notebook folder
     if v: print('Notebook location:', base_path)
     return base_path
@@ -42,7 +44,10 @@ def get_notebook_rel_base_path(target_base='notebooks',
     rel_path = ''
     i = -1
     cc = 0
+    if target_base == FOLDER:
+        return "./"
     while folder != target_base:
+        if v: print(folder, ' == ', target_base)
         rel_path += '../'
         i -= 1
         if folders[i]:
@@ -61,6 +66,7 @@ def get_notebook_rel_base_path(target_base='notebooks',
     return rel_path
 
 def _print_paths():   
+    print('\nFolder:\n\t', FOLDER)
     print('\nThis_notebook_path:\n\t', NOTE_DIR)
     print('\nNotebooks_abs_path:\n\t', NOTEBOOKS_ABS_DIR)
     print('\nNotebooks_rel_relative_path:\n\t', NOTEBOOKS_REL_DIR)
