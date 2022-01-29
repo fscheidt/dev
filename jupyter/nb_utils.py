@@ -1,17 +1,19 @@
+# %load https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_utils.py
 # utils to set notebook context
 # update_version: https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_utils.py
 import os
-
+_FOLDER = ''
 def get_notebook_dir(v=False) -> str:
     global BASE
-    global FOLDER
+    global _FOLDER
     base_path = ''
     try:
         if BASE:
             base_path = BASE
+            _FOLDER = BASE.split('/')[-1]
     except:
         BASE = os.path.abspath('')
-        FOLDER = BASE.split('/')[-1]
+        _FOLDER = BASE.split('/')[-1]
         base_path = os.path.abspath('')  # current notebook folder
     if v: print('Notebook location:', base_path)
     return base_path
@@ -38,13 +40,14 @@ def get_notebook_rel_base_path(target_base='notebooks',
                                resource_dir="static",
                                file_name=None,
                                v=False):
+    global _FOLDER
     dirname = get_notebook_dir()  # current notebook folder
     folders = dirname.split('/')
     folder = ''
     rel_path = ''
     i = -1
     cc = 0
-    if target_base == FOLDER:
+    if target_base == _FOLDER:
         return "./"
     while folder != target_base:
         if v: print(folder, ' == ', target_base)
@@ -66,7 +69,8 @@ def get_notebook_rel_base_path(target_base='notebooks',
     return rel_path
 
 def _print_paths():   
-    print('\nFolder:\n\t', FOLDER)
+    global _FOLDER
+    print('\nFolder:\n\t', _FOLDER)
     print('\nThis_notebook_path:\n\t', NOTE_DIR)
     print('\nNotebooks_abs_path:\n\t', NOTEBOOKS_ABS_DIR)
     print('\nNotebooks_rel_relative_path:\n\t', NOTEBOOKS_REL_DIR)
@@ -87,6 +91,6 @@ STATIC_DIR_ABS_PATH = get_notebook_abs_base_path(resource_dir="static")
 RENDER_JS_ABS_PATH = get_notebook_abs_base_path(file_name="renderjson.js")
 RENDER_JS_REL_PATH = get_notebook_rel_base_path(resource_dir="static", file_name="renderjson.js")
 
-# _print_paths()
+_print_paths()
     
 %cd $PROJECT_ABS_DIR
