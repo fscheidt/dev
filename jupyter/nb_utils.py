@@ -1,6 +1,7 @@
 # utils to set notebook context
 # update_version: https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_utils.py
 import os
+
 def get_notebook_dir(v=False) -> str:
     global BASE
     base_path = ''
@@ -59,32 +60,27 @@ def get_notebook_rel_base_path(target_base='notebooks',
     if v: print('Notebooks relative folder:', rel_path)
     return rel_path
 
-
+def _print_paths():   
+    print('\nThis_notebook_path:\n\t', NOTE_DIR)
+    print('\nNotebooks_abs_path:\n\t', NOTEBOOKS_ABS_DIR)
+    print('\nNotebooks_rel_relative_path:\n\t', NOTEBOOKS_REL_DIR)
+    print('\nProject_abs_path:\n\t', PROJECT_ABS_DIR)
+    print('\nProject_rel_path:\n\t', PROJECT_REL_DIR)   
+    print('\nStatic_dir_relative_path:\n\t', STATIC_DIR_REL_PATH)
+    print('\nStatic_dir_absolute_path:\n\t', STATIC_DIR_ABS_PATH)
+    print('\n[renderjson.js] abs_path:\n\t', RENDER_JS_ABS_PATH)  
+    print('\n[renderjson.js] rel_path:\n\t', RENDER_JS_REL_PATH)
+    
 NOTE_DIR = get_notebook_dir()
-print('\nThis_notebook_path:\n\t', NOTE_DIR)
-
 NOTEBOOKS_ABS_DIR = get_notebook_abs_base_path(resource_dir='')
-print('\nNotebooks_abs_path:\n\t', NOTEBOOKS_ABS_DIR)
-
 NOTEBOOKS_REL_DIR = get_notebook_rel_base_path(resource_dir='')
-print('\nNotebooks_rel_relative_path:\n\t', NOTEBOOKS_REL_DIR)
-
-PROJECT_ABS_DIR = get_notebook_abs_base_path(target_base="gitlog_builder",resource_dir='')
-print('\nProject_abs_path:\n\t', PROJECT_ABS_DIR)
-
+PROJECT_ABS_DIR = get_notebook_abs_base_path(target_base="gitlog_builder",resource_dir='')    
 PROJECT_REL_DIR = get_notebook_rel_base_path(target_base="gitlog_builder", resource_dir='')
-print('\nProject_rel_path:\n\t', PROJECT_REL_DIR)
-
 STATIC_DIR_REL_PATH = get_notebook_rel_base_path(resource_dir="static")
-print('\nStatic_dir_relative_path:\n\t', STATIC_DIR_REL_PATH)
-
 STATIC_DIR_ABS_PATH = get_notebook_abs_base_path(resource_dir="static")
-print('\nStatic_dir_absolute_path:\n\t', STATIC_DIR_ABS_PATH)
-
 RENDER_JS_ABS_PATH = get_notebook_abs_base_path(file_name="renderjson.js")
-print('\n[renderjson.js] abs_path:\n\t', RENDER_JS_ABS_PATH)
-
 RENDER_JS_REL_PATH = get_notebook_rel_base_path(resource_dir="static", file_name="renderjson.js")
-print('\n[renderjson.js] rel_path:\n\t', RENDER_JS_REL_PATH)
 
+# _print_paths()
+    
 %cd $PROJECT_ABS_DIR
