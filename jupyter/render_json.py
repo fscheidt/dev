@@ -1,3 +1,5 @@
+# utils print json_data and mongo_documents
+# update_version: https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/render_json.py
 import uuid
 from IPython.display import display_javascript, display_html, display
 import json
@@ -7,6 +9,7 @@ JS_FILE = "https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/renderj
 
 class RenderJSON(object):
     def __init__(self, json_data):
+        json_data = RenderJSON.doc_to_json(json_data)
         if isinstance(json_data, dict):
             self.json_str = json.dumps(json_data)
         else:
@@ -27,7 +30,27 @@ class RenderJSON(object):
         formatted_json = json.dumps(json_data, sort_keys=True, indent=4)
         colorful_json = highlight(formatted_json, lexers.JsonLexer(), formatters.TerminalFormatter())
         print(colorful_json)
+        
+    @staticmethod
+    def print_pyg_m(mongo_doc):
+        json_data = RenderJSON.doc_to_json(mongo_doc)
+        RenderJSON.print_pyg(json_data)
+
+    @staticmethod
+    def doc_to_json(mongo_doc):        
+        import importlib
+        bson_installed = importlib.util.find_spec("bson")
+        found = bson_installed is not None
+        if found:
+            from bson import json_util
+        else:
+            return mongo_doc
+        """
+        convert mongo document to json
+        """
+        return json.loads(json_util.dumps(mongo_doc))
 
 # test:
 # RenderJSON(json_doc)
-# RenderJSON(fmt.doc_to_json(mongo_doc))
+# RenderJSON({'star':'one', 'distance': '4.4'})
+# RenderJSON.print_pyg({'star':'one', 'distance': '4.4'})
