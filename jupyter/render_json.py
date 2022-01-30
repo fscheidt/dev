@@ -37,7 +37,10 @@ class RenderJSON(object):
         RenderJSON.print_pyg(json_data)
 
     @staticmethod
-    def doc_to_json(mongo_doc):        
+    def doc_to_json(mongo_doc):
+        """
+        convert mongo document to json
+        """        
         import importlib
         bson_installed = importlib.util.find_spec("bson")
         found = bson_installed is not None
@@ -45,9 +48,6 @@ class RenderJSON(object):
             from bson import json_util
         else:
             return mongo_doc
-        """
-        convert mongo document to json
-        """
         return json.loads(json_util.dumps(mongo_doc))
 
 # test:
