@@ -17,10 +17,11 @@ def get_notebook_dir(v=False) -> str:
     if v: print('Notebook location:', base_path)
     return base_path
 
-def get_notebook_abs_base_path(target_base='notebooks',
-                               resource_dir="static",
-                               file_name=None,
-                               v=False):
+def get_notebook_abs_base_path(
+        target_base='notebooks',
+        resource_dir="static",
+        file_name=None,
+        v=False):
     dirname = get_notebook_dir() # current notebook folder
     folders = dirname.split('/')
     base_path = ''
@@ -80,20 +81,27 @@ def _print_paths():
     print('\n[renderjson.js] abs_path:\n\t', RENDER_JS_ABS_PATH)  
     print('\n[renderjson.js] rel_path:\n\t', RENDER_JS_REL_PATH)
 
+# 🟡 python project name
 PROJECT='gitlog_builder'
+# 🟡 resource folder - containing js+other files
+RESOURCE_DIR='static'
+
 NOTE_DIR = get_notebook_dir()
 NOTEBOOKS_ABS_DIR = get_notebook_abs_base_path(resource_dir='')
 NOTEBOOKS_REL_DIR = get_notebook_rel_base_path(resource_dir='')
 PROJECT_ABS_DIR = get_notebook_abs_base_path(target_base=PROJECT,resource_dir='')    
 PROJECT_REL_DIR = get_notebook_rel_base_path(target_base=PROJECT, resource_dir='')
-STATIC_DIR_REL_PATH = get_notebook_rel_base_path(resource_dir="static")
-STATIC_DIR_ABS_PATH = get_notebook_abs_base_path(resource_dir="static")
+STATIC_DIR_REL_PATH = get_notebook_rel_base_path(resource_dir=RESOURCE_DIR)
+STATIC_DIR_ABS_PATH = get_notebook_abs_base_path(resource_dir=RESOURCE_DIR)
 RENDER_JS_ABS_PATH = get_notebook_abs_base_path(file_name="renderjson.js")
-RENDER_JS_REL_PATH = get_notebook_rel_base_path(resource_dir="static", file_name="renderjson.js")
+RENDER_JS_REL_PATH = get_notebook_rel_base_path(resource_dir=RESOURCE_DIR, file_name="renderjson.js")
+# RENDER_JS_LC_PATH = RENDER_JS_ABS_PATH
+RENDER_JS_LC_PATH = RENDER_JS_REL_PATH
 
 # _print_paths()
 
-print('PWD:       ', end='')    
+print('PWD:          ', end='')    
 %cd $PROJECT_ABS_DIR
 
-print('NOTE_PATH:', NOTE_DIR)
+print('NOTE_PATH:    ', NOTE_DIR)
+print('RENDERJSON.JS:', RENDER_JS_LC_PATH)
