@@ -26,12 +26,17 @@ class RenderJSON(object):
         """ % (self.uuid, self.json_str), raw=True)
 
     @staticmethod
-    def print_pyg(json_data):
+    def pprint(json_data):
         json_data = RenderJSON.doc_to_json(json_data)
         from pygments import highlight, lexers, formatters
         formatted_json = json.dumps(json_data, sort_keys=True, indent=4)
         colorful_json = highlight(formatted_json, lexers.JsonLexer(), formatters.TerminalFormatter())
         print(colorful_json)
+    
+    @staticmethod
+    def dprint(data, indent=4, sort_keys=True):
+        data = RenderJSON.doc_to_json(data)
+        print(json.dumps(data, indent=indent, sort_keys=sort_keys))
 
     @staticmethod
     def doc_to_json(mongo_doc):
