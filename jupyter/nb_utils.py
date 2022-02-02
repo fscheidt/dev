@@ -1,6 +1,10 @@
 # utils to set notebook context
 # update_version: https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_utils.py
 import os
+
+# 🟡 project dir_name
+PROJECT='gitlog_builder'
+
 _FOLDER = ''
 def get_notebook_dir(v=False) -> str:
     global BASE
@@ -81,8 +85,7 @@ def _print_paths():
     print('\n[renderjson.js] abs_path:\n\t', RENDER_JS_ABS_PATH)  
     print('\n[renderjson.js] rel_path:\n\t', RENDER_JS_REL_PATH)
 
-# 🟡 python project name
-PROJECT='gitlog_builder'
+
 # 🟡 resource folder - containing js+other files
 RESOURCE_DIR='static'
 
