@@ -1,4 +1,3 @@
-# %load https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_functions.py
 # update_version: https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_functions.py
 from datetime import datetime
 from time import strftime
