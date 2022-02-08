@@ -1,4 +1,4 @@
-# update_version: https://github.com/fscheidt/dev/blob/master/jupyter/nb_functions.py
+# update_version: https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_functions.py
 class NBFunctions:
     
     def __init__():
