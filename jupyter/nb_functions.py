@@ -9,4 +9,9 @@ class NBFunctions:
         from IPython.core.display import HTML
         return HTML("<script>Jupyter.notebook.kernel.restart()</script>")
     
+    @staticmethod
+    def kill():
+        import IPython
+        IPython.Application.instance().kernel.do_shutdown(True)
+    
 nbf = NBFunctions
