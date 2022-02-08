@@ -52,7 +52,9 @@ class RenderJSON(object):
             return mongo_doc
         return json.loads(json_util.dumps(mongo_doc))
 
+
+render = RenderJSON
 # test:
 # RenderJSON(json_doc)
 # RenderJSON({'star':'one', 'distance': '4.4'})
-# RenderJSON.print_pyg({'star':'one', 'distance': '4.4'})
+# RenderJSON.pprint({'star':'one', 'distance': '4.4'})
