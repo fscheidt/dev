@@ -7,21 +7,23 @@ import uuid
 from IPython.display import display_javascript, display_html, display
 import json
 
-JS_FILE = None
-try:
-    JS_FILE = RENDER_JS_LC_PATH
-except:
-    JS_FILE = "https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/renderjson.js"
-
-
 """
-Load this file into a notebook:
+Load this script into notebook:
 %load https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_functions.py
 """
 
-class RuntimeLogger:
+_DEFS = {
+    'JS_URL': "https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/renderjson.js",
+    'SOURCE': "https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_functions.py",
+    'JS_FILE': None,
+}
+try:
+    _DEFS['JS_FILE'] = RENDER_JS_LC_PATH or _DEFS['JS_URL']
+except:
+    JS_FILE = _DEFS['JS_URL']
 
-    
+
+class RuntimeLogger:
     def __init__(self, v=False):
         self.begin = None
         self.end = None
@@ -93,9 +95,7 @@ class RenderJSON(object):
             return mongo_doc
         return json.loads(json_util.dumps(mongo_doc))
 
-
 class NBFunctions:
-    
     log = RuntimeLogger(v=True)
     render = RenderJSON
     
@@ -116,3 +116,7 @@ class NBFunctions:
         IPython.Application.instance().kernel.do_shutdown(True)
     
 nb = NBFunctions()
+# test:
+# print(JS_FILE)
+# nb.render({'data': '1'})
+# nb.render.pprint({'data': '1'})
