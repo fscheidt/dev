@@ -95,7 +95,7 @@ class RenderJSON(object):
         return json.loads(json_util.dumps(mongo_doc))
 
 class NBFunctions:
-    log = RuntimeLogger(v=True)
+    log = RuntimeLogger()
     render = RenderJSON
     
     def __init__(self, v=True):
