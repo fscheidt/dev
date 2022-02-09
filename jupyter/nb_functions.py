@@ -23,7 +23,6 @@ except:
     _DEFS['JS_FILE'] = _DEFS['JS_URL']
 JS_FILE = _DEFS['JS_FILE']
 
-
 class RuntimeLogger:
     def __init__(self, v=False):
         self.begin = None
@@ -48,7 +47,6 @@ class RuntimeLogger:
     @staticmethod
     def runtime(duration):
         print(f'Total run_time: {strftime("%H:%M:%S", gmtime(duration))}')
-
 
 class RenderJSON(object):
     def __init__(self, json_data):
@@ -115,9 +113,12 @@ class NBFunctions:
     def kill():
         import IPython
         IPython.Application.instance().kernel.do_shutdown(True)
-    
+
 nb = NBFunctions()
-# test:
+# # test:
 # print(JS_FILE)
+# nb.restart()
+# nb.log.begin_time()
 # nb.render({'data': '1'})
 # nb.render.pprint({'data': '1'})
+# nb.render.dprint({'data': '1'})
