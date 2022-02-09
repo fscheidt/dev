@@ -29,10 +29,9 @@ class RuntimeLogger:
         self.begin = None
         self.end = None
         self.start_time = time.time()
-        self.start = f"[start]: {datetime.now().strftime('%Y/%m/%d - %H:%M:%S')}"
+        self.start = f"[init_log]: {datetime.now().strftime('%Y/%m/%d - %H:%M:%S')}"
         self.v = v
-        if v:
-            print('[start_time]:', datetime.now().strftime('%Y/%m/%d - %H:%M:%S'))
+        if self.v: print(self.start)
 
     def begin_time(self):
         self.begin = time.time()
@@ -42,7 +41,7 @@ class RuntimeLogger:
         self.end = time.time()
         print('end_time:', datetime.now().strftime('%Y/%m/%d - %H:%M:%S'))
         ellapse_time = self.end - self.begin
-        print('Total timing:', end='')
+        print('Total timing: ', end='')
         print(f'\t[{strftime("%H:%M:%S", gmtime(ellapse_time))}]')
         return ellapse_time
 
@@ -69,21 +68,22 @@ class RenderJSON(object):
         """ % (self.uuid, self.json_str), raw=True)
 
     @staticmethod
-    def pprint(json_data):
+    def pprint(json_data, sort_keys=True, indent=4):
         """ print using pygments """
         json_data = RenderJSON.doc_to_json(json_data)
         from pygments import highlight, lexers, formatters
-        formatted_json = json.dumps(json_data, sort_keys=True, indent=4)
+        formatted_json = json.dumps(json_data, sort_keys=sort_keys, indent=indent)
         colorful_json = highlight(formatted_json, lexers.JsonLexer(), formatters.TerminalFormatter())
         print(colorful_json)
     
     @staticmethod
     def dprint(data, indent=4, sort_keys=True):
+        """ print only using json.dumps """
         data = RenderJSON.doc_to_json(data)
         print(json.dumps(data, indent=indent, sort_keys=sort_keys))
 
     @staticmethod
-    def doc_to_json(mongo_doc):
+    def doc_to_json(mongo_doc) -> dict:
         """
         convert mongo document to json
         """        
