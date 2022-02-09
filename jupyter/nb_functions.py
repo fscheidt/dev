@@ -4,8 +4,15 @@ from time import strftime
 from time import gmtime
 import time
 
+"""
+Load this file into a notebook:
+
+%load https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_functions.py
+"""
+
 class RuntimeLogger:
 
+    
     def __init__(self, v=False):
         self.begin = None
         self.end = None
