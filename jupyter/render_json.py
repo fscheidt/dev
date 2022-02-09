@@ -1,5 +1,5 @@
-# utils print json_data and mongo_documents
-# update_version: https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/render_json.py
+# DEPRECATED! utils print json_data and mongo_documents
+# => NEW VERSION: %load https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_functions.py
 import uuid
 from IPython.display import display_javascript, display_html, display
 import json
