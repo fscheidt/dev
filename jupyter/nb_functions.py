@@ -6,7 +6,6 @@ import time
 
 """
 Load this file into a notebook:
-
 %load https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_functions.py
 """
 
