@@ -6,6 +6,16 @@ import os
 PROJECT='gitlog_builder'
 
 _FOLDER = ''
+
+def show_env():
+    # dl.pprint("# ENV Variables:")
+    # gtb_prod = !echo $GTB_PROD
+    # gtb_dev = !echo $GTB_DEV
+    # print('$GTB_PROD:', gtb_prod[0])
+    # print('$GTB_DEV: ', gtb_dev[0])
+    active_env = !conda info | grep "active envi"
+    print(f"Conda environment: {active_env[0].split(':')[1]}")
+
 def get_notebook_dir(v=False) -> str:
     global BASE
     global _FOLDER
