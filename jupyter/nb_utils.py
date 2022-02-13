@@ -1,20 +1,18 @@
+# %load https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_utils.py
 # utils to set notebook context
 # update_version: https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_utils.py
 import os
+from IPython.display import display_javascript, display_html, display, HTML
 
 # 🟡 project dir_name
 PROJECT='gitlog_builder'
 
 _FOLDER = ''
 
-def show_env():
-    # dl.pprint("# ENV Variables:")
-    # gtb_prod = !echo $GTB_PROD
-    # gtb_dev = !echo $GTB_DEV
-    # print('$GTB_PROD:', gtb_prod[0])
-    # print('$GTB_DEV: ', gtb_dev[0])
+def show_env():    
     active_env = !conda info | grep "active envi"
-    print(f"Conda environment: {active_env[0].split(':')[1]}")
+    active_env = active_env[0].split(':')[1]
+    display(HTML(f"<p style='font-size:1.2em'>Conda_environment: <b style='color:#523ac9'>{active_env}</b></p>"))
 
 def get_notebook_dir(v=False) -> str:
     global BASE
@@ -112,9 +110,12 @@ RENDER_JS_REL_PATH = get_notebook_rel_base_path(resource_dir=RESOURCE_DIR, file_
 RENDER_JS_LC_PATH = RENDER_JS_REL_PATH
 
 # _print_paths()
-
-print('PWD:          ', end='')    
+print(f'{"PROJECT: ": <18} {PROJECT}')
+print(f'{"PWD: ": <18}', end=' ')
 %cd $PROJECT_ABS_DIR
 
-print('NOTE_PATH:    ', NOTE_DIR)
-print('RENDERJSON.JS:', RENDER_JS_LC_PATH)
+print(f'{"PROJECT_ABS_DIR: ": <18} {PROJECT_ABS_DIR}')
+
+print(f'{"NOTE_PATH: ": <18} {NOTE_DIR}')
+print(f'{"RENDERJSON: ": <18} {RENDER_JS_LC_PATH}')
+show_env()
