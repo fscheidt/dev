@@ -1,4 +1,3 @@
-# %load https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_utils.py
 # utils to set notebook context
 # update_version: https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_utils.py
 import os
@@ -8,13 +7,15 @@ from IPython.display import display_javascript, display_html, display, HTML
 PROJECT='gitlog_builder'
 
 _FOLDER = ''
-
+CTX = {}
 def show_env():    
     active_env = !conda info | grep "active envi"
     active_env = active_env[0].split(':')[1]
+    CTX['conda_env'] = active_env
     display(HTML(f"<p style='font-size:1.2em'>Conda_environment: <b style='color:#523ac9'>{active_env}</b></p>"))
 
 def get_notebook_dir(v=False) -> str:
+    CTX['project']=PROJECT
     global BASE
     global _FOLDER
     base_path = ''
@@ -92,14 +93,25 @@ def _print_paths():
     print('\nStatic_dir_absolute_path:\n\t', STATIC_DIR_ABS_PATH)
     print('\n[renderjson.js] abs_path:\n\t', RENDER_JS_ABS_PATH)  
     print('\n[renderjson.js] rel_path:\n\t', RENDER_JS_REL_PATH)
-
+    
+def _info():
+    print(f'{"PROJECT_ABS_DIR: ": <18} {PROJECT_ABS_DIR}')
+    print(f'{"NOTE_PATH: ": <18} {NOTE_DIR}')
+    print(f'{"RENDERJSON: ": <18} {RENDER_JS_LC_PATH}')
+    show_env()
 
 # 🟡 resource folder - containing js+other files
 RESOURCE_DIR='static'
 
 NOTE_DIR = get_notebook_dir()
+CTX['note_dirname'] = NOTE_DIR
+
 NOTEBOOKS_ABS_DIR = get_notebook_abs_base_path(resource_dir='')
+CTX['note_abs_path'] = NOTEBOOKS_ABS_DIR
+
 NOTEBOOKS_REL_DIR = get_notebook_rel_base_path(resource_dir='')
+CTX['note_rel_path'] = NOTEBOOKS_REL_DIR
+
 PROJECT_ABS_DIR = get_notebook_abs_base_path(target_base=PROJECT,resource_dir='')    
 PROJECT_REL_DIR = get_notebook_rel_base_path(target_base=PROJECT, resource_dir='')
 STATIC_DIR_REL_PATH = get_notebook_rel_base_path(resource_dir=RESOURCE_DIR)
@@ -114,8 +126,4 @@ print(f'{"PROJECT: ": <18} {PROJECT}')
 print(f'{"PWD: ": <18}', end=' ')
 %cd $PROJECT_ABS_DIR
 
-print(f'{"PROJECT_ABS_DIR: ": <18} {PROJECT_ABS_DIR}')
-
-print(f'{"NOTE_PATH: ": <18} {NOTE_DIR}')
-print(f'{"RENDERJSON: ": <18} {RENDER_JS_LC_PATH}')
-show_env()
+_info()
