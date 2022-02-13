@@ -18,7 +18,8 @@ _DEFS = {
     'JS_FILE': None,
 }
 try:
-    _DEFS['JS_FILE'] = RENDER_JS_LC_PATH or _DEFS['JS_URL']
+    # _DEFS['JS_FILE'] = RENDER_JS_LC_PATH or _DEFS['JS_URL']
+    _DEFS['JS_FILE'] = ctx.settings.RENDER_JS_LC_PATH or _DEFS['JS_URL']
 except:
     _DEFS['JS_FILE'] = _DEFS['JS_URL']
 JS_FILE = _DEFS['JS_FILE']
