@@ -119,19 +119,19 @@ class NBFunctions:
     def dec(value):
         return '{:,}'.format(value)
     @staticmethod
-    def float2(value):
+    def f2(value):
         return "{:.2f}".format(value)
     @staticmethod
-    def float3(value):
+    def f3(value):
         return "{:.3f}".format(value)
     @staticmethod
-    def float4(value):
+    def f4(value):
         return "{:.4f}".format(value)
     @staticmethod
-    def float5(value):
+    def f5(value):
         return "{:.5f}".format(value)
     @staticmethod
-    def float6(value):
+    def f6(value):
         return "{:.6f}".format(value)
 
 nb = NBFunctions()
