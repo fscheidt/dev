@@ -114,6 +114,10 @@ class NBFunctions:
     def kill():
         import IPython
         IPython.Application.instance().kernel.do_shutdown(True)
+    
+    @staticmethod
+    def pprint(json_data, sort_keys=True, indent=4):
+       NBFunctions.render.pprint(json_data)
 
     @staticmethod    
     def dec(value):
