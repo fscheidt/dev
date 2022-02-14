@@ -119,6 +119,12 @@ class NBFunctions:
     def dec(value):
         return '{:,}'.format(value)
     @staticmethod
+    def float2(value):
+        return "{:.2f}".format(value)
+    @staticmethod
+    def float3(value):
+        return "{:.3f}".format(value)
+    @staticmethod
     def float4(value):
         return "{:.4f}".format(value)
     @staticmethod
