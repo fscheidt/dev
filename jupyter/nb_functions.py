@@ -115,10 +115,15 @@ class NBFunctions:
         import IPython
         IPython.Application.instance().kernel.do_shutdown(True)
 
+    @staticmethod    
+    def dec(value):
+        return '{:,}'.format(value)
+
 nb = NBFunctions()
 # # test:
 # print(JS_FILE)
 # nb.restart()
+# nb.dec(100000)
 # nb.log.begin_time()
 # nb.render({'data': '1'})
 # nb.render.pprint({'data': '1'})
