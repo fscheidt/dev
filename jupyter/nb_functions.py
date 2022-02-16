@@ -4,8 +4,9 @@ from time import strftime
 from time import gmtime
 import time
 import uuid
-from IPython.display import display_javascript, display_html, display
+from IPython.display import display_javascript, display_html, display, HTML
 import json
+import os
 
 """
 Load this script into notebook:
