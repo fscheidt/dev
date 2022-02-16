@@ -151,6 +151,7 @@ class NBFunctions:
         return "{:.6f}".format(value)
 
 nb = NBFunctions()
+nb.set_env()
 # # test:
 # print(JS_FILE)
 # nb.restart()
