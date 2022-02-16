@@ -11,17 +11,19 @@ import json
 Load this script into notebook:
 %load https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_functions.py
 """
-
+_ENV = 'GTB_DEV'
+_PATH= ''
 _DEFS = {
     'JS_URL': "https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/renderjson.js",
     'SOURCE': "https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_functions.py",
-    'JS_FILE': None,
+    'JS_FILE': None
 }
 try:
     # _DEFS['JS_FILE'] = RENDER_JS_LC_PATH or _DEFS['JS_URL']
     _DEFS['JS_FILE'] = ctx.settings.RENDER_JS_LC_PATH or _DEFS['JS_URL']
 except:
     _DEFS['JS_FILE'] = _DEFS['JS_URL']
+
 JS_FILE = _DEFS['JS_FILE']
 
 class RuntimeLogger:
@@ -119,6 +121,15 @@ class NBFunctions:
     def pprint(json_data, sort_keys=True, indent=4):
         """ wrapper to render.pprint() """
         NBFunctions.render.pprint(json_data)
+
+    @staticmethod
+    def set_env():
+        active_env = !conda info | grep "active envi"
+        active_env = active_env[0].split(':')[1]
+        display(HTML(f"<p style='font-size:1.2em'>Conda_environment: <b style='color:#523ac9'>{active_env}</b></p>"))
+        _PATH = os.environ.get(_ENV)
+        %cd $_PATH
+
 
     @staticmethod    
     def dec(value):
