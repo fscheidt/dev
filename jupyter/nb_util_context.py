@@ -42,7 +42,7 @@ class RuntimeLogger:
         print(f'Total run_time: {strftime("%H:%M:%S", gmtime(duration))}')
 
 class RenderJSON(object):
-    _JS_FILE = JS_FILE or os.path.join(PROJECT_HOME, '/notebooks/static/')
+    _JS_FILE = JS_FILE or os.path.join(PROJECT_HOME, '/notebooks/static/renderjson.js')
     def __init__(self, json_data):
         json_data = RenderJSON.doc_to_json(json_data)
         if isinstance(json_data, dict):
@@ -53,7 +53,7 @@ class RenderJSON(object):
     def _ipython_display_(self):
         display_html('<div class="render_json" id="{}" style="font-size:1.2em; height: 600px; width:100%;"></div>'.format(self.uuid), raw=True)
         display_javascript("""
-        require(['"""+_JS_FILE+"""'], function() {
+        require(['"""+RenderJSON._JS_FILE+"""'], function() {
         document.getElementById('%s').appendChild(renderjson(%s))
         });
         """ % (self.uuid, self.json_str), raw=True)
