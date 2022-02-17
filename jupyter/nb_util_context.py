@@ -14,8 +14,10 @@ import re
 """
 %load https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_util_context.py
 """
+PROJECT_HOME = os.getenv('APP_DIFFBERT') or None
 PROJECT = 'diffbert'
-JS_FILE = "https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/renderjson.js"
+# JS_FILE = "https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/renderjson.js"
+JS_FILE = None
 
 class RuntimeLogger:
     def __init__(self, v=False):
@@ -23,7 +25,7 @@ class RuntimeLogger:
         self.end = None
         self.start_time = time.time()
         self.start = f"[init_log]: {datetime.now().strftime('%Y/%m/%d - %H:%M:%S')}"
-        self.v = v
+        self.v = v        
         if self.v: print(self.start)
     def begin_time(self):
         self.begin = time.time()
@@ -40,6 +42,7 @@ class RuntimeLogger:
         print(f'Total run_time: {strftime("%H:%M:%S", gmtime(duration))}')
 
 class RenderJSON(object):
+    _JS_FILE = JS_FILE or os.path.join(PROJECT_HOME, '/notebooks/static/')
     def __init__(self, json_data):
         json_data = RenderJSON.doc_to_json(json_data)
         if isinstance(json_data, dict):
@@ -50,7 +53,7 @@ class RenderJSON(object):
     def _ipython_display_(self):
         display_html('<div class="render_json" id="{}" style="font-size:1.2em; height: 600px; width:100%;"></div>'.format(self.uuid), raw=True)
         display_javascript("""
-        require(['"""+JS_FILE+"""'], function() {
+        require(['"""+_JS_FILE+"""'], function() {
         document.getElementById('%s').appendChild(renderjson(%s))
         });
         """ % (self.uuid, self.json_str), raw=True)
@@ -82,18 +85,18 @@ class NBFunctions:
     log = RuntimeLogger()
     render = RenderJSON
     
-    def __init__(self, v=True):
+    def __init__(self, v=False):
         self.v = v
         self.set_paths()
         self.load_time = time.time()
-        print(f"[load_time]: {datetime.now().strftime('%Y/%m/%d - %H:%M:%S')}")
+        print(f"[load_at]: {datetime.now().strftime('%Y/%m/%d - %H:%M:%S')}")
     
     def set_paths(self):
         self.fp = self.get_notebook_full_path_name()
         self.file_name = self.fp.split('/')[-1]
         folders = self.fp.split('/')
         self.base_dir = "/".join(folders[0:-1])
-        self.project_path = "/".join(folders[0:folders.index(PROJECT)+1])
+        self.project_path = PROJECT_HOME or "/".join(folders[0:folders.index(PROJECT)+1])
         if self.v:
             print('fp:', self.fp)
             print('file_name:', self.file_name)
@@ -130,7 +133,7 @@ class NBFunctions:
     def set_env():
         active_env = !conda info | grep "active envi"
         active_env = active_env[0].split(':')[1]
-        display(HTML(f"<p style='font-size:1.2em'>Conda_environment: <b style='color:#523ac9'>{active_env}</b></p>"))
+        display(HTML(f"<p style='font-size:1.2em'>conda_env: <b style='color:#523ac9'>{active_env}</b></p>"))
     def get_real_path(self):
         global BASE
         global _FOLDER
@@ -166,6 +169,4 @@ class NBFunctions:
 
 nb = NBFunctions()
 nb.set_env()
-!pwd
 %cd $nb.project_path
-!pwd
