@@ -1,4 +1,3 @@
-# %load 
 from datetime import datetime
 from time import strftime
 from time import gmtime
@@ -13,8 +12,7 @@ from notebook.notebookapp import list_running_servers
 import os
 import re
 """
-Load this script into notebook:
-%load https://raw.githubusercontent.com/fscheidt/dev/
+%load https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/nb_util_context.py
 """
 PROJECT = 'diffbert'
 JS_FILE = "https://raw.githubusercontent.com/fscheidt/dev/master/jupyter/renderjson.js"
@@ -133,7 +131,6 @@ class NBFunctions:
         active_env = !conda info | grep "active envi"
         active_env = active_env[0].split(':')[1]
         display(HTML(f"<p style='font-size:1.2em'>Conda_environment: <b style='color:#523ac9'>{active_env}</b></p>"))
-        
     def get_real_path(self):
         global BASE
         global _FOLDER
