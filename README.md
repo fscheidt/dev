@@ -1,10 +1,8 @@
-[Home](https://github.com/fscheidt/dev)
-
 **See also**:
-- https://github.com/fscheidt/index
+- [❖ INDEX](https://github.com/fscheidt/index#index)
 - https://github.com/fscheidt/devconfs
 
-<hr><br>
+---
 
 # Content
 Config files, scripts and templates + shell snippets.
