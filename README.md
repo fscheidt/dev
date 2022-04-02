@@ -1,4 +1,10 @@
-[Home](https://github.com/fscheidt/dev) 
+[Home](https://github.com/fscheidt/dev)
+
+**See also**:
+- https://github.com/fscheidt/index
+- https://github.com/fscheidt/devconfs
+
+<hr><br>
 
 # Content
 Config files, scripts and templates + shell snippets.
