@@ -1,11 +1,11 @@
 **See also**:
-- [❖ INDEX](https://github.com/fscheidt/index#index)
-- https://github.com/fscheidt/devconfs
+- [❖INDEX](https://github.com/fscheidt/index#index)
+- [/devconfs]https://github.com/fscheidt/devconfs)
 
 ---
 
 # Content
-Config files, scripts and templates + shell snippets.
+Configuration files, settings and setup.
 
 ### [Git version control](contents/git/git.md)
 - [comandos frequentes](contents/git/git.md#comandos)
