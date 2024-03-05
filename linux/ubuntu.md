@@ -25,12 +25,9 @@ sudo apt install vim curl git -y
 sudo apt install rar unrar p7zip-full p7zip-rar pigz attr brotli -y
 ```
 
-> build tools
+## python
 
 [pyenv deps](/python/pyenv.md)
-
-
-## python
 
 > check python:
 
@@ -41,7 +38,7 @@ pip -V
 ```
 
 ```bash
-sudo apt-get install python3-pip python3-venv -y
+sudo apt-get install python3-pip python3-venv python3-gpg -y
 ```
 
 ## [Node.js install](/javascript/nodejs.md)

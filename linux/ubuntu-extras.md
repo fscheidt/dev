@@ -97,9 +97,11 @@ sudo apt install httpie
 
 ```bash
 sudo snap install drawing
-sudo snap install okular
 ```
 
+```bash
+sudo snap install okular
+```
 
 
 ## Other tools
