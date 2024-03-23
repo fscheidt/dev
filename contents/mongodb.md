@@ -31,3 +31,29 @@ echo DBQuery.prototype._prettyShell = true >> ~/.mongorc.js
 ```bash
 DBQuery.shellBatchSize = 40
 ```
+
+## Configuração 
+
+verificar valor atual:
+
+```bash
+sysctl -n vm.max_map_count
+```
+
+definir novo valor:
+
+```bash
+# arquivo: /etc/sysctl.conf
+vm.max_map_count=262144
+```
+
+
+```bash
+sudo sysctl -w vm.max_map_count=262144
+```
+
+
+```bash
+
+```
+
