@@ -1,5 +1,6 @@
 # Poetry
-Gerenciamento de dependências para Python.
+
+Gerenciamento de dependências para projetos em Python.
 
 - https://python-poetry.org/
 
@@ -9,23 +10,29 @@ Gerenciamento de dependências para Python.
 curl -sSL https://install.python-poetry.org | python3 -
 ```
 
+> verificar a versão instalada
 
 ```bash
 poetry --version
 ```
-Se o comando acima falhar, rodar o comando abaixo para adicionar o caminho para o poetry:
+
+*Se o comando acima falhar, adicionar na variável PATH o caminho de instalação do poetry:*
 
 ```bash
 echo 'export PATH="${HOME}/.local/bin:${PATH}"' >> ~/.bashrc
 ```
 
-## Criar novo projeto
+## Criar *novo* projeto
+
+O comando `poetry new` cria um novo projeto chamado "poetry-demo"
 
 ```bash
 poetry new poetry-demo
 ```
 
-## Adicionar o poetry a um projeto
+## Adicionar o poetry a um projeto *existente*
+
+O comando `poetry init` cria os arquivos `pyproject.toml` que contém as dependências do projeto.
 
 ```bash
 poetry init
@@ -33,16 +40,20 @@ poetry init
 
 ## Adiciona a biblioteca `requests`
 
+O comando `poetry add` adiciona uma biblioteca python como dependência ao projeto, atualizando o arquivo pyproject.toml.
+
 ```bash
 poetry add requests
 ```
 
 ## Ativar o ambiente
+
 ```bash
 poetry shell
 ```
 
 ## Instalar dependências
+
 Instala todas a dependências definidas no arquivo `pyproject.toml`
 
 ```bash
