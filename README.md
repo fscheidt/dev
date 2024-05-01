@@ -1,8 +1,7 @@
 # Conteúdo
 
-## Python
+## [Python](/python/python.md)
 
-- [Flask](python/flask.md)
 - [pyenv](python/pyenv.md)
 - [poetry](python/poetry.md)
 
