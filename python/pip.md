@@ -12,13 +12,13 @@ pip -V
 
 ## instalar pacote
 
-```
+```bash
 pip install requests
 ```
 
 Opções:
 
-```
+```bash
 --user
 instala dependências na pasta $HOME/.local
 ```

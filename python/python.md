@@ -6,15 +6,14 @@
 sudo apt-get install python3-pip python3-venv python3-gpg -y
 ```
 
-
-## check python
+check python version:
 
 ```bash
 python3 --version
-python --version
 pip -V
 ```
 
+## [venv](/python/venv.md)
 
 ## [pyenv](/python/pyenv.md)
 
