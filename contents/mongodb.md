@@ -9,35 +9,76 @@ Obter o arquivo/pacote `.deb` na [página](https://www.mongodb.com/try/download/
 sudo apt install ./mongodb-org-server_7.0.9_amd64.deb
 ```
 
-### Iniciar serviço
+### Serviço
+
+Iniciar serviço
 
 ```bash
 sudo systemctl start mongod
 ```
 
+Verificar status:
+
 ```bash
 sudo systemctl status mongod
 ```
 
-### Habilitar serviço
-
-Habilita o serviço `mongod` para iniciar junto com o sistema operacional
+Habilitar o serviço `mongod` para iniciar junto com o sistema operacional
 
 ```bash
 sudo systemctl enable mongod
 ```
 
+Opcional: Suporte ao sistema de arquivos [XFS](/linux/utils/xfs.md)
+
 ---
 
-## Comandos via terminal
 
-### Importar uma base de dados existente
+## Configurações
 
-```bash
-mongorestore -d dbname /path/to/dbname/
+### mongod.conf
+
+```
+# mongod.conf
+# for documentation of all options, see:
+#   http://docs.mongodb.org/manual/reference/configuration-options/
+# Where and how to store data.
+storage:
+  dbPath: /var/lib/mongodb
+#  engine:
+#  wiredTiger:
+# where to write logging data.
+systemLog:
+  destination: file
+  logAppend: true
+  path: /var/log/mongodb/mongod.log
 ```
 
-## Configuração mongosh
+### Performance
+
+**max_map_count**
+
+```bash
+# verifica valor atual
+sysctl -n vm.max_map_count
+```
+
+Editar `/etc/sysctl.conf` e definir o novo valor:
+
+```bash
+vm.max_map_count=262144
+```
+
+Definir o valor para a sessão atual:
+
+```bash
+sudo sysctl -w vm.max_map_count=262144
+```
+
+
+### Mongosh
+
+Editar o arquivo `~/.mongorc.js`
 
 **Habilitar pretty print**
 
@@ -51,23 +92,14 @@ echo DBQuery.prototype._prettyShell = true >> ~/.mongorc.js
 DBQuery.shellBatchSize = 40
 ```
 
-## Configuração 
 
-verificar valor atual:
+## Comandos 
 
-```bash
-sysctl -n vm.max_map_count
-```
-
-definir novo valor:
+### Importar base de dados existente
 
 ```bash
-# file: /etc/sysctl.conf
-vm.max_map_count=262144
+mongorestore -d dbname /path/to/dbname/
 ```
 
-
-```bash
-sudo sysctl -w vm.max_map_count=262144
-```
+onde `dbname` é o nome do banco de dados, e o segundo parâmetro é a pasta onde estão os arquivos `.bson`
 
