@@ -131,6 +131,8 @@ Ubuntu versions install file:
 - 20.04 - https://packages.ubuntu.com/focal/tilix
 - 22.04 - https://packages.ubuntu.com/jammy/tilix 
     - v1.9.4-2 [deb file](http://ubuntu.c3sl.ufpr.br/ubuntu/pool/universe/t/tilix/tilix_1.9.4-2build1_amd64.deb)
+- 24.04 - https://packages.ubuntu.com/noble/amd64/tilix/download
+    - [v1.9.6-2build1_amd64.deb](http://mirrors.kernel.org/ubuntu/pool/universe/t/tilix/tilix_1.9.6-2build1_amd64.deb)
 
 ```bash
 sudo apt install ./tilix_1.9.4-2build1_amd64.deb --fix-broken
