@@ -1,21 +1,40 @@
 # MongoDB
 
+## Instalação
+
+Obter o arquivo/pacote `.deb` na [página](https://www.mongodb.com/try/download/community) da versão community edition. Alternativamente, baixar diretamente o arquivo .deb [aqui](https://repo.mongodb.org/apt/ubuntu/dists/jammy/mongodb-org/7.0/multiverse/binary-amd64/mongodb-org-server_7.0.9_amd64.deb) (para ubuntu 22.04)
+
+
+```bash
+sudo apt install ./mongodb-org-server_7.0.9_amd64.deb
+```
+
+### Iniciar serviço
+
+```bash
+sudo systemctl start mongod
+```
+
+```bash
+sudo systemctl status mongod
+```
 
 ### Habilitar serviço
 
-```bash
-# check if service is running
-sudo systemctl start mongod
-sudo systemctl status mongod
+Habilita o serviço `mongod` para iniciar junto com o sistema operacional
 
-# set mongod service to start with the system boot
+```bash
 sudo systemctl enable mongod
 ```
 
-## Import dataset
+---
+
+## Comandos via terminal
+
+### Importar uma base de dados existente
 
 ```bash
-mongorestore -d dbname dir/dbname/
+mongorestore -d dbname /path/to/dbname/
 ```
 
 ## Configuração mongosh
@@ -43,17 +62,12 @@ sysctl -n vm.max_map_count
 definir novo valor:
 
 ```bash
-# arquivo: /etc/sysctl.conf
+# file: /etc/sysctl.conf
 vm.max_map_count=262144
 ```
 
 
 ```bash
 sudo sysctl -w vm.max_map_count=262144
-```
-
-
-```bash
-
 ```
 

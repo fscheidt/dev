@@ -28,11 +28,11 @@ sudo apt install rar unrar p7zip-full p7zip-rar pigz attr brotli -y
 
 ## [Python](/python/python.md)
 
-## [Node.js install](/javascript/nodejs.md)
-
-## [Java](/contents/java.md)
+## [Node.js](/javascript/nodejs.md)
 
 ## [Git](/contents/git.md)
+
+## [Java](/contents/java.md)
 
 ## Other packages
 

@@ -2,14 +2,21 @@
 
 ## Download and install
 
-- https://code.visualstudio.com/download
+- download `.deb` file from https://code.visualstudio.com/download
+
+> Install:
+
+```bash
+sudo apt install ./code_1.88.1-1712771838_amd64.deb
+```
 
 ## Settings
 
-No raiz do projeto criar o arquivo `settings.json` na pasta `.vscode`
+- Na raiz do projeto criar a pasta `.vscode`
+- Dentro da pasta `.vscode` criar o arquivo `settings.json`
 
 
-Configura diferentes níveis de indentação (`tabSize`) de acordo com a linguagem de programação:
+Adicionar a configuração abaixo no arquivo `settings.json` que configura o espaçamento da [indentação](https://pt.wikipedia.org/wiki/Indenta%C3%A7%C3%A3o) (`tabSize`) de acordo com a linguagem de programação:
 
 ```json
 {

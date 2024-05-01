@@ -1,5 +1,7 @@
 # Svelte
 
+- [Requires Node.js](/javascript/nodejs.md)
+
 ## Create new svelte project
 
 Commands below creates a svelte project named **movies-client**

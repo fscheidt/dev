@@ -17,7 +17,7 @@ Commands to **run**:
 **(1)** Get node installer script:
 
 ```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 ```
 
 <u>close the terminal and open a new one.</u>
@@ -28,7 +28,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 nvm list-remote
 ```
 
-**(3)** Install the latest node version:
+**(3)** Install the **latest** node version:
 
 > Last version
 
@@ -38,13 +38,7 @@ nvm install node
 
 OR 
 
-Install specific version:
-
-> Gallium LTS
-
-```bash
-nvm install v16.19.0
-```
+Install **specific** version:
 
 > Hydrogen LTS
 
@@ -63,21 +57,20 @@ node -v
 
 <details>
 <summary>...</summary>
-```bash
-curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
-```
+
+- https://github.com/nodesource/distributions
+
+> Node v20.x
 
 ```bash
-sudo bash nodesource_setup.sh
-```
-
-```bash
-sudo apt install nodejs
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
 ```
 
 ```bash
 node -v
 npm -v
 ```
+
 </details>
 
