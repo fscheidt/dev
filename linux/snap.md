@@ -1,9 +1,14 @@
 # snap
 
-Free old snap packages sooner to gain more disk space:
+## Clean unused packages 
+
+Remove old snap packages sooner to free disk space:
 
 ```bash
 sudo snap set system refresh.retain=2
 ```
 
-Retain value can be between 2 to 20. Default value is 3.
+*Retain default value is ***3***.* Value can be between **2** to **20**. 
+
+
+- [Remove old packages script](/linux/scripts/clean_snap.sh)

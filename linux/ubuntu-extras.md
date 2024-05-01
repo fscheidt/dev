@@ -135,7 +135,11 @@ Ubuntu versions install file:
     - [v1.9.6-2build1_amd64.deb](http://mirrors.kernel.org/ubuntu/pool/universe/t/tilix/tilix_1.9.6-2build1_amd64.deb)
 
 ```bash
-sudo apt install ./tilix_1.9.4-2build1_amd64.deb --fix-broken
+sudo apt install ./tilix_1.9.4-2build1_amd64.deb
+```
+
+```bash
+# sudo apt install ./tilix_1.9.4-2build1_amd64.deb --fix-broken
 ```
 
 ## Databases
@@ -163,7 +167,7 @@ sudo apt install flatpak
 - [download linux distros](https://www.virtualbox.org/wiki/Linux_Downloads)
 
 ```bash
-sudo apt install ./virtualbox-6.1_6.1.38-153438_Ubuntu_jammy_amd64.deb --fix-broken
+sudo apt install ./virtualbox-7.0_7.0.16-162802~Ubuntu~jammy_amd64.deb --fix-broken
 ```
 
 ## Dotfiles
@@ -187,56 +191,7 @@ sudo sysctl fs.inotify.max_user_watches=500000
 sudo sysctl -p
 ```
 
-
-## Timeshift
-
-version: 24.01
-
-- https://github.com/linuxmint/timeshift
-- [build howto](https://github.com/linuxmint/timeshift/blob/master/docs/development.md)
-
-### Btrfs
-
-```bash
-sudo apt install btrfs-progs
-```
-
-### Build
-
-```bash
-sudo apt install meson \
-help2man \
-gettext \
-valac \
-libvte-2.91-dev \
-libgee-0.8-dev \
-libjson-glib-dev \
-libxapp-dev
-```
-
-```bash
-git clone https://github.com/linuxmint/timeshift.git
-```
-
-```bash
-cd timeshift
-```
-
-```bash
-meson setup build
-```
-
-```bash
-meson compile -C build 
-```
-
-```bash
-sudo meson install -C build
-```
-
-```bash
-sudo timeshift-gtk
-```
+## [Timeshift](/linux/utils/timeshift.md)
 
 ### Apt
 
