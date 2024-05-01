@@ -90,7 +90,7 @@ sudo systemctl enable ssh; sudo systemctl start ssh
 > api tools
 
 ```bash
-sudo apt install httpie
+sudo apt install httpie -y
 ```
 
 ## Snap

@@ -1,3 +1,6 @@
+# scripts
+
+## `.bash_aliases`
 
 ```bash
 #!/bin/bash
@@ -20,12 +23,10 @@ alias x_hashall='find . -type f -print0 | xargs -0 sha256sum'
 
 ```
 
+## `.bashrc`
 
 ```bash
 #!/bin/bash
-
-# .bashrc
-
 export EDITOR=vim
 export PATH="$HOME/.dot:$PATH"
 
