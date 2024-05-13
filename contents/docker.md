@@ -51,6 +51,26 @@ sudo docker run hello-world
 ```
 
 
+### Inicialização do serviço
+
+Configura a inicialização do serviço docker junto com o boot do SO:
+
+```bash
+
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+
+```
+
+Desabilita a inicialização:
+
+```bash
+
+sudo systemctl disable docker.service
+sudo systemctl disable containerd.service
+
+```
+
 ## Containers 
 
 ### Flutter
