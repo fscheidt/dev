@@ -61,12 +61,28 @@ sudo apt install libfuse2
 
 ## Essential
 
-- [bat](https://github.com/sharkdp/bat/releases/latest)
-  - `sudo apt install ./bat_0.xx.amd64.deb`
-- [fd](https://github.com/sharkdp/fd/releases/latest)
-- [btop](https://github.com/aristocratos/btop)
+### [bat](https://github.com/sharkdp/bat)
 
-> fzf
+```bash
+cargo install --locked bat
+```
+
+
+### [fd](https://github.com/sharkdp/fd)
+
+```bash
+cargo install fd-find
+```
+
+### [btop](https://github.com/aristocratos/btop)
+
+```bash
+sudo snap install btop --edge
+or
+sudo snap install btop-desktop --edge
+```
+
+### fzf
 
 ```bash
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
