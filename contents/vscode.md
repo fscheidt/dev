@@ -90,7 +90,7 @@ Adicionar as configurações a seguir em `settings.json` para definir o espaçam
 
 ```json
 {
-    "workbench.colorTheme": "Default High Contrast Light",
+    "files.autoSave": "afterDelay",
     "files.exclude": {
         ".git": true,
         ".idea": true,
@@ -105,36 +105,36 @@ Adicionar as configurações a seguir em `settings.json` para definir o espaçam
         "**/CVS": false,
         "**/Thumbs.db": false
     },
-    "files.autoSave": "afterDelay",
-    "explorer.confirmDelete": false,
     "editor.stickyScroll.enabled": false,
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "explorer.confirmPasteNative": false,
-    "liveServer.settings.donotShowInfoMsg": true,
-    "explorer.confirmDragAndDrop": false,
     "editor.lineHeight": 1.6,
-    "git.openRepositoryInParentFolders": "never",
-    "editor.minimap.enabled": false,
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "window.zoomLevel": 1.4,
     "editor.fontFamily": "'Meslo','monospace', monospace",
+    "editor.minimap.enabled": false,
+    "editor.renderLineHighlightOnlyWhenFocus": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmPasteNative": false,
+    "explorer.confirmDragAndDrop": false,
+    "git.openRepositoryInParentFolders": "never",
+    "jupyter.askForKernelRestart": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "notebook.lineNumbers": "on",
     "notebook.output.lineHeight": 1.1,
     "notebook.output.fontSize": 14,
-    "notebook.output.fontFamily": "Roboto Mono, Noto Sans Mono, Inconsolata",
+    "notebook.output.fontFamily": "Roboto Mono, Noto Sans Mono",
     "notebook.markdown.lineHeight": 24,
     "notebook.markup.fontSize": 16,
     "notebook.output.textLineLimit": 60,
     "notebook.showFoldingControls": "always",
-    "window.menuBarVisibility": "compact",
     "terminal.integrated.lineHeight": 1,
     "terminal.integrated.fontSize": 12,
+    "window.menuBarVisibility": "compact",
+    "window.zoomLevel": 1.4,
     "workbench.iconTheme": "ayu",
-    "jupyter.askForKernelRestart": false,
-    "editor.renderLineHighlightOnlyWhenFocus": true,
-    "notebook.lineNumbers": "on"
+    "workbench.colorTheme": "Default High Contrast Light",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    }
 }
 ```
