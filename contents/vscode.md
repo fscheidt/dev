@@ -43,6 +43,27 @@ Adicionar as configurações a seguir em `settings.json` para definir o espaçam
 
 ```json
 [
+
+    {
+        "key": "ctrl+k ctrl+l",
+        "command": "editor.toggleFold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+k ctrl+j",
+        "command": "editor.unfoldAll",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+k ctrl+0",
+        "command": "editor.foldAll",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+k ctrl+2",
+        "command": "editor.foldLevel2",
+        "when": "editorTextFocus && foldingEnabled"
+    },
     {
         "key": "ctrl+d",
         "command": "editor.action.deleteLines",
