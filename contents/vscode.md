@@ -41,6 +41,12 @@ Adicionar as configurações a seguir em `settings.json` para definir o espaçam
 
 > `~/.config/Code/User/keybindings.json`
 
+
+- <kbd>ctrl</kbd>+<kbd>k</kbd>&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>l</kbd> — fold code
+- <kbd>ctrl</kbd>+<kbd>j</kbd> — toogle terminal
+
+
+
 ```json
 [
 
