@@ -1,6 +1,7 @@
 # Conteúdo
 
 ## [Svelte](/javascript/svelte.md)
+- SvelteKit
 
 ## [Python](/python/python.md)
 
