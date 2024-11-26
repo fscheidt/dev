@@ -1,6 +1,6 @@
 # Svelte
 
-- [Requires Node.js](/javascript/nodejs.md)
+- [Requires Node.js](/javascript/nodejs.md) -- `version >= 20`
 
 ## Create new svelte project
 
