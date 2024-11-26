@@ -1,5 +1,7 @@
 # Conteúdo
 
+## [Svelte](/javascript/svelte.md)
+
 ## [Python](/python/python.md)
 
 - [pyenv](python/pyenv.md)
