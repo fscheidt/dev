@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+results=$(echo "$PATH")
+_usage(){
+cat << EOF
+  USAGE
+  -----
+  pathls [fuzzy find PATH variables]
+  pathls -c [dump paths with cat]
+  pathls home [find paths in /home]
+EOF
+}
+_pathls(){
+    if [[ $# -eq 0 ]] ; then
+        echo $PATH | tr ':' '\n' | fzf
+	elif [[ $1 == "-c" ]] ; then # use cat instead of fzf
+        IFS=$':' read -ra ADDR -d $'\0' <<< "$results"
+        unset IFS
+        IFS=$'\n' xddr=("$(sort <<<"${ADDR[*]}")")
+        unset IFS
+        for i in "${xddr[@]}"
+        do
+            echo "$i"
+        done        
+    else
+        echo $PATH | tr ':' '\n' | grep $1 | fzf
+    fi
+}
+[[ $1 == "-h" ]] && _usage && exit 0
+_pathls "$@"

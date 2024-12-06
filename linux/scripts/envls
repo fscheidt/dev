@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+_usage(){
+cat << EOF
+${R}     USAGE
+${R}     -----
+${Y}     envls ${S} fuzzy find env variables
+${Y}  envls -c ${S} dump env vars with cat
+${Y} envls XDG ${S} find all env variables with XDG in name
+EOF
+}
+function _envls(){
+	if [[ $# -eq 0 ]] ; then
+    env | column -s "=" -t | fzf
+	elif [[ $1 == "-c" ]] ; then # use cat instead of fzf
+    env | grep "$2" | sort | cat
+	else
+    env | grep "$1" | sort | bat -p -l bash --paging=never --theme Coldark-Cold
+	fi
+}
+[[ $1 == "-h" ]] && _usage && exit 0
+_envls "$@"

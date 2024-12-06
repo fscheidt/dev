@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+zipinit(){
+  dirs_found=$(find . -mindepth 1 -maxdepth 1 -type d -not -name '.*' | wc -l)
+  echo -e "Found $dirs_found directories in $(pwd)"
+
+  echo -e "\nZip all? [y/n] "
+  read -n1 -p "" yn1
+  if [[ $yn1 == "y" ]]; then
+    cc=0
+    for dir in */; do
+        # Get the name of the directory without trailing slash
+        dir_name=${dir%/}
+        # Create a zip file with the same name as the directory
+        zip -r "$dir_name.zip" "$dir_name"
+        # Count the number of zip files created
+        ((cc++))
+    done
+    echo -e "\n$cc zip files created"
+    echo -e "\nDone!\n"
+  else
+    echo -e "\nAbort\n"
+  fi
+}
+zipinit "$@"
