@@ -12,7 +12,7 @@
 
 - [comandos](contents/git.md#comandos)
 - [gitignore](contents/git.md#gitignore)
-- [gitignore collection](https://github.com/fscheidt/gitignore#a-collection-of-gitignore-templates)
+- [gitignore templates](https://github.com/fscheidt/gitignore#a-collection-of-gitignore-templates)
 
 ## Linux
 
