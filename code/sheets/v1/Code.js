@@ -16,7 +16,10 @@ var sheetScript = {
   uuid: "unique",
   repo: `https://github.com/fscheidt/dev/blob/master/code/sheets/v1/SpreadApi.js`,
 }
+
 /* =========================================== */
+/* =========================================== */
+
 function createAva(){ copySheet("ava"); }
 function createBlank(){ copySheet("blank"); }
 function createCalendar(){ copySheet("calendar"); }
@@ -28,6 +31,7 @@ function createExporta(){ copySheet("exporta"); }
 function createEnums(){ copySheet("enums"); }
 function createVars(){ copySheet("vars"); }
 function createView(){ copySheet("view"); }
+function createFunctions(){ copySheet("functions"); }
 
 function onOpen() {
   var ss = SpreadsheetApp.getActive();
@@ -45,6 +49,7 @@ function onOpen() {
     { name: "create: enums", functionName: "createEnums" },
     { name: "create: vars", functionName: "createVars" },
     { name: "create: view", functionName: "createView" },
+    { name: "create: functions", functionName: "createFunctions" },
     { name: "style: highlight formulas", functionName: "highlightFormulas" },
     null,
     { name: "admin: prompt permissions", functionName: "promptAuth" },
