@@ -1,0 +1,18 @@
+{
+    "timeZone": "America/Sao_Paulo",
+    "dependencies": {
+      "libraries": [
+        {
+          "userSymbol": "SpreadUtils",
+          "version": "0",
+          "libraryId": "1H9Uy_T7DIAlzXQRcCG9rWs7_hjLaoWJP6AdnknOx8UP_-BxEKryjiQdZ",
+          "developmentMode": true
+        }
+      ]
+    },
+    "exceptionLogging": "STACKDRIVER",
+     "oauthScopes": [
+      "https://www.googleapis.com/auth/spreadsheets.currentonly"
+    ],
+    "runtimeVersion": "V8"
+  }
