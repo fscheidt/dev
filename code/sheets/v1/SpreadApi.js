@@ -13,6 +13,8 @@ SpreadUtils API
 var gs = SpreadUtils.getInstance().gs;
 var xnr = SpreadUtils.getInstance().xnr;
 
+function showMessage(message){ return SpreadUtils.showMessage(message) }
+function highlightFormulas(){ return SpreadUtils.highlightFormulas() }
 function getSheetIdByName(shname){ return SpreadUtils.getSheetIdByName(shname) }
 function getSheetUrlByName(shname){ return SpreadUtils.getSheetUrlByName(shname) }
 function getSheetShortUrlByName(shname){ return SpreadUtils.getSheetShortUrlByName(shname) }
