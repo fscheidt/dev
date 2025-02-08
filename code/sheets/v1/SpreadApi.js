@@ -13,11 +13,27 @@ SpreadUtils API
 var gs = SpreadUtils.getInstance().gs;
 var xnr = SpreadUtils.getInstance().xnr;
 
+function getSpreadSheetScriptInfo(){ return SpreadUtils.getSpreadSheetScriptInfo(sheetScript) }
+function getLibraryInfo(){ return SpreadUtils.getLibraryInfo() }
+function promptAuth() { return SpreadUtils.promptAuth() }
+function createIndex() { return SpreadUtils.createIndex() }
+
+function createAva() { return SpreadUtils.createAva() }
+function createCalendar() { return SpreadUtils.createCalendar() }
+function createConsulta() { return SpreadUtils.createConsulta() }
+function createData() { return SpreadUtils.createData() }
+function createDisciplinas() { return SpreadUtils.createDisciplinas() }
+function createEnums() { return SpreadUtils.createEnums() }
+function createExporta() { return SpreadUtils.createExporta() }
+function createIndex() { return SpreadUtils.createIndex() }
+function createVars() { return SpreadUtils.createVars() }
+function createView() { return SpreadUtils.createView() }
+
 function showMessage(message){ return SpreadUtils.showMessage(message) }
 function highlightFormulas(){ return SpreadUtils.highlightFormulas() }
 function getSheetIdByName(shname){ return SpreadUtils.getSheetIdByName(shname) }
 function getSheetUrlByName(shname){ return SpreadUtils.getSheetUrlByName(shname) }
-function getSheetShortUrlByName(shname){ return SpreadUtils.getSheetShortUrlByName(shname) }
+function getSheetGIDByName(shname){ return SpreadUtils.getSheetGIDByName(shname) }
 
 function SHA1(txt,ishort=false){ return SpreadUtils.SHA1(txt,ishort) }
 function MD5(txt,isshort=false){ return SpreadUtils.MD5(txt,isshort) }
@@ -40,8 +56,6 @@ function getDefaultMenuEntries(){ return SpreadUtils.getDefaultMenuEntries() }
 function getSSId(){ return SpreadUtils.getSSId() }
 function getSSUrl(){ return SpreadUtils.getSSUrl() }
 function getSSInfo(){ return SpreadUtils.getSSInfo() }
-function getScriptInfo(){ return SpreadUtils.getScriptInfo() }
-function getScript(prop="version"){ return SpreadUtils.getScript(prop); }
 function getSheets(){ return SpreadUtils.getSheets() }
 function getSheetsNames(){ return SpreadUtils.getSheetsNames() }
 function getSheetName(){ return SpreadUtils.getSheetName() }
