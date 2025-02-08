@@ -16,19 +16,8 @@ var xnr = SpreadUtils.getInstance().xnr;
 function getSpreadSheetScriptInfo(){ return SpreadUtils.getSpreadSheetScriptInfo(sheetScript) }
 function getLibraryInfo(){ return SpreadUtils.getLibraryInfo() }
 function promptAuth() { return SpreadUtils.promptAuth() }
-function createIndex() { return SpreadUtils.createIndex() }
 
-function createAva() { return SpreadUtils.createAva() }
-function createCalendar() { return SpreadUtils.createCalendar() }
-function createConsulta() { return SpreadUtils.createConsulta() }
-function createData() { return SpreadUtils.createData() }
-function createDisciplinas() { return SpreadUtils.createDisciplinas() }
-function createEnums() { return SpreadUtils.createEnums() }
-function createExporta() { return SpreadUtils.createExporta() }
-function createIndex() { return SpreadUtils.createIndex() }
-function createVars() { return SpreadUtils.createVars() }
-function createView() { return SpreadUtils.createView() }
-
+function copySheet(shName){ return SpreadUtils.copySheet(shName) }
 function showMessage(message){ return SpreadUtils.showMessage(message) }
 function highlightFormulas(){ return SpreadUtils.highlightFormulas() }
 function getSheetIdByName(shname){ return SpreadUtils.getSheetIdByName(shname) }
