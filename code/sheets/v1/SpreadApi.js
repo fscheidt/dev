@@ -22,7 +22,6 @@ function MD5(txt,isshort=false){ return SpreadUtils.MD5(txt,isshort) }
 function UUID(){ return SpreadUtils.UUID() }
 function UUID6(){ return SpreadUtils.UUID6() }
 function UUID16(){ return SpreadUtils.UUID16() }
-function applySheetBaseStyle(sheet) { return SpreadUtils.applySheetBaseStyle(sheet) }
 function applyBaseTemplate(tplName=null){ return SpreadUtils.applyBaseTemplate(tplName) }
 function columnToLetter(){ return SpreadUtils.columnToLetter() }
 function clearRangeContent(){ return SpreadUtils.clearRangeContent() }

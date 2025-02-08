@@ -29,5 +29,4 @@ function onOpen() {
   */
   ss.addMenu("Menu", entries);
 }
-
 /* =========================================== */
