@@ -4,8 +4,14 @@
 
 ## Create new svelte project
 
-Commands below creates a svelte project named **movies-client**
+Run the command below to create a new svelte project named **movies-client**
 
+option 1: using svelte cli
+```bash
+npx sv create movies-client
+```
+
+option 2: using vite
 ```bash
 npm create vite@latest movies-client -- --template svelte
 ```

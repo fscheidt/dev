@@ -6,7 +6,7 @@ Commads to verify node.js installed version:
 node -v
 ```
 
-We need version >= 18
+We need version >= 22
 
 ## Install Node
 
@@ -17,7 +17,7 @@ Commands to **run**:
 **(1)** Get node installer script:
 
 ```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 ```
 
 <u>close the terminal and open a new one.</u>
