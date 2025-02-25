@@ -1,11 +1,12 @@
 # Go lang
 
-## Install
+## Install (linux)
 
-Download binary `go1.20.2.linux-amd64.tar.gz` from [go.dev](https://go.dev/doc/install)
+Download binary `go1.24.0.linux-amd64.tar.gz` from [go.dev](https://go.dev/dl/)
 
+Uncompress and copy to /usr/local
 ```bash
-sudo tar -C /usr/local -xzf go1.20.2.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.24.0.linux-amd64.tar.gz
 ```
 
 ## Adicionar path
