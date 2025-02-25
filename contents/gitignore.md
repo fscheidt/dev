@@ -4,7 +4,7 @@ O arquivo `.gitignore` deve ser criado na pasta raiz do projeto. Nele são espec
 
 ### Projetos python
 
-Todos os arquivo a seguir serão *ignorados* pelo git:
+Todos os arquivo abaixo são *ignorados* pelo git:
 
 ```
 *.zip

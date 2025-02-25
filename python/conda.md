@@ -4,10 +4,10 @@ Environment management
 
 ## Install
 
-Download and install:
+install:
 
 ```bash
-sh ./Anaconda3-2023.03-Linux-x86_64.sh.sh
+sh ./Anaconda3-2023.03-Linux-x86_64.sh
 ```
 
 > update:

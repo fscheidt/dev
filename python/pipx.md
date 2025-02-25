@@ -4,13 +4,16 @@
 
 ## Install
 
+
 ```bash
-python3 -m pip install --user pipx
+sudo apt update
+sudo apt install pipx
 ```
 
-add to path
+Add to PATH
 ```bash
-python3 -m pipx ensurepath
+pipx ensurepath
+sudo pipx ensurepath --global # optional to allow pipx actions with --global argument
 ```
 
 ```bash

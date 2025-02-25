@@ -1,4 +1,6 @@
-# pip - *package installer for python*
+# pip 
+
+*package installer for python*
 
 O comando `pip` permite instalar pacotes da linguagem python.
 
