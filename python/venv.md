@@ -1,16 +1,16 @@
 # venv
 
-## Criar o ambiente virtual
+## Criar ambiente virtual python
 
 Seja o nome do projeto `pyweb`, executar a seguinte sequência de comandos no terminal para criar um ambiente virtual python para o projeto:
 
-**(1) acessar a pasta pyweb:**
+**(1) abrir o terminal na pasta pyweb:**
 
 ```bash
 cd pyweb
 ```
 
-confira se o terminal está dentro da pasta:
+confirir se o terminal esta na pasta correta:
 ```bash
 pwd
 ```
@@ -33,10 +33,26 @@ python3 -m venv env
 source env/bin/activate
 ```
 
-O ambiente deverá estar configurado. Dentro do projeto **pyweb**, deverá aparecer uma nova pasta com nome `env`. Esta pasta contém a instalação do python e outras bibliotecas (dependências) usadas no projeto.
+testar se o ambiente foi corretamente instalado e se esta ativado:
+```bash
+which python
+```
 
-Para instalar uma nova biblioteca no projeto, devemos primeiro **ativar** o ambiente e depois executar o comando pip install. Abaixo temos um exemplo onde a biblioteca `requests` é instalada no ambiente virtual:
+saída no terminal:
+<pre>
+(env)  ~/pyweb$ which python
+/home/ifpr/projetos/pyweb/env/bin/python
+</pre>
+
+**(4) Instalar biblioteca**
+
+Dentro do projeto **pyweb**, deverá aparecer uma nova pasta com nome `env`. Esta pasta contém a instalação do python e outras bibliotecas (dependências) usadas no projeto.
+
+Para instalar uma nova biblioteca no projeto, verificar se o ambiente esta ativado e na sequencia executar o comando `pip install`. 
+
+Exemplo de instalação da biblioteca `requests`:
 
 ```bash
 pip install requests
 ```
+
